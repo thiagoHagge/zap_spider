@@ -20,3 +20,6 @@ for (dirpath, dirnames, filenames) in walk(customer_path):
         b, g, r = cv2.split(difference)
         if cv2.countNonZero(b) == 0 and cv2.countNonZero(g) == 0 and cv2.countNonZero(r) == 0:
             replace(u_path, './guilty/'+filen[0])
+            print('igual')
+        else:
+            print('diferente')
