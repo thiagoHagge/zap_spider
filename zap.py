@@ -27,7 +27,7 @@ for x in range(int(n)):
      print('salvando imagem do número:'+phone+'. Nome: '+name)
      response = requests.get(src, stream=True)
      with open('./zap_users/'+phone+'-'+name+'.png', 'wb') as out_file:
-      shutil.copyfileobj(response.ra, out_file)
+      shutil.copyfileobj(response.raw, out_file)
      del response
  except NoSuchElementException:
     c=0 
