@@ -10,8 +10,9 @@ for (dirpath, dirnames, filenames) in walk(customer_path):
     customer_image = cv2.imread(customer_path+'/'+filenames[0])
 
     for (dirp, dirn, filen) in walk(user_path):
-        print('No users founded')
-        exit()
+        if len(filen) == 0:
+            print('No users founded')
+            exit()
         u_path = user_path+'/'+filen[0]
         user_image = cv2.imread(u_path)
         difference = cv2.subtract(customer_image, user_image)
