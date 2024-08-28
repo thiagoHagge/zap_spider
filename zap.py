@@ -22,11 +22,12 @@ for x in range(int(n)):
   imgs = driver.find_elements(By.TAG_NAME, 'img')
   for img in imgs:
    src = img.get_attribute('src')
-   if src.find('stp=dst-jpg_s96x96') == -1 and src.find('https://') == 0 and src.find('maps') == -1:
-    print('salvando imagem do número:'+phone+'. Nome: '+name)
-    response = requests.get(src, stream=True)
-    with open('./zap_users/'+phone+'-'+name+'.png', 'wb') as out_file:
-     shutil.copyfileobj(response.ra, out_file)
-    del response
+   if src is not None:
+    if src.find('stp=dst-jpg_s96x96') == -1 and src.find('https://') == 0 and src.find('maps') == -1:
+     print('salvando imagem do número:'+phone+'. Nome: '+name)
+     response = requests.get(src, stream=True)
+     with open('./zap_users/'+phone+'-'+name+'.png', 'wb') as out_file:
+      shutil.copyfileobj(response.ra, out_file)
+     del response
  except NoSuchElementException:
     c=0 
