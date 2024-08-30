@@ -1,4 +1,3 @@
-Quase sem espaço de armazenamento … Se você atingir o limite, não será possível criar, editar ou fazer upload de arquivos.
 import requests
 import shutil
 import os
